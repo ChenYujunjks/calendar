@@ -10,7 +10,7 @@ export default function HomePage() {
     >
       {/* Header */}
       <header className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold">YiTan Li</h1>
+        <h1 className="text-3xl font-bold">Bruce Chen</h1>
 
         <div className="flex items-center gap-4">
           {/* ① 日夜切换 */}
@@ -23,7 +23,7 @@ export default function HomePage() {
                        hover:bg-[#a7f3d0] hover:text-zinc-900
                        dark:hover:bg-[#34d399]/30"
           >
-            Open Calendar
+            Open Calendar
           </Link>
         </div>
       </header>
@@ -33,12 +33,12 @@ export default function HomePage() {
         <h2 className="text-xl font-semibold">About Me</h2>
         <p>
           I&apos;m a senior CS student at <strong>NYU Shanghai</strong>{" "}
-          (Class of 2025), passionate about decentralized systems,
-          cryptography&nbsp;⚙️, and creative coding. Recent projects include a
-          blockchain‑based messaging app and an interactive WebGL tool.
+          (Class of 2025), passionate about decentralized systems,
+          cryptography&nbsp;⚙️. Recent projects include a
+          blockchain-based messaging app and an interactive WebGL tool.
         </p>
         <p>
-          Skills: Python · Go · TypeScript · React/Next.js · Solidity · MySQL
+          Skills:Go · TypeScript · React/Next.js · MySQL · Python · Solidity 
         </p>
       </section>
 
@@ -49,10 +49,10 @@ export default function HomePage() {
           <li>
             Email:&nbsp;
             <a
-              href="mailto:yitan.li@example.com"
+              href="mailto:yc5508@nyu.edu"
               className="underline hover:text-blue-600"
             >
-              yitan.li@example.com
+              yc5508@nyu.edu
             </a>
           </li>
           <li>
@@ -63,7 +63,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="underline hover:text-blue-600"
             >
-              github.com/yitan-li
+              https://github.com/ChenYujunjks
             </a>
           </li>
         </ul>
@@ -71,7 +71,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="mt-auto border-t pt-6 text-center text-xs text-zinc-500">
-        © {new Date().getFullYear()} YiTan Li. All rights reserved.
+        © {new Date().getFullYear()} Bruce Chen. All rights reserved.
       </footer>
     </main>
   );

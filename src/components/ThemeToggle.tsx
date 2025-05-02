@@ -12,10 +12,10 @@ export default function ThemeToggle() {
     <button
       onClick={() => setTheme(opposite)}
       className="rounded-lg border px-3 py-1 text-sm transition
-                 hover:bg-gray-100 dark:hover:bg-zinc-800"
+                 hover:bg-gray-100 dark:hover:bg-[#34d399]/30"
     >
       {/* Button text reflects the next mode */}
-      {opposite === "dark" ? "🌙 Dark" : "💡 Light"}
+      {opposite === "dark" ? "💡 Light" : "🌙 Dark"}
     </button>
   );
 }
