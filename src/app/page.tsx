@@ -2,7 +2,6 @@
 // pages/calendar.tsx
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import "react-day-picker/dist/style.css";
 import ThemeToggle from "@/components/ThemeToggle";
 
 // SSR 环境下按需加载，避免样式闪烁
@@ -33,21 +32,22 @@ export default function CalendarPage() {
   return (
     <div className="p-4 max-w-md mx-auto">
       <main
-        className="flex min-h-screen flex-col items-center justify-center
-                     bg-[rgb(var(--background))] text-[rgb(var(--foreground))]"
+        className="flex flex-col items-center gap-6
+                 bg-[rgb(var(--background))] text-[rgb(var(--foreground))]"
       >
-        <h1 className="text-3xl font-bold mb-4">Hello, Next.js!</h1>
+        <h1 className="text-3xl font-bold mt-8">Hello, Next.js!</h1>
         <ThemeToggle />
+        <DayPicker
+          mode="single"
+          selected={new Date()}
+          modifiers={modifiers}
+          modifiersClassNames={{
+            hasEvent:
+              "relative after:absolute after:bottom-1 after:left-1/2 after:-translate-x-1/2 " +
+              "after:w-2 after:h-2 after:rounded-full after:bg-blue-500",
+          }}
+        />
       </main>
-      <DayPicker
-        mode="single"
-        selected={new Date()}
-        modifiers={modifiers}
-        modifiersClassNames={{
-          hasEvent:
-            "relative after:absolute after:bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-2 after:h-2 after:rounded-full after:bg-blue-500",
-        }}
-      />
     </div>
   );
 }
