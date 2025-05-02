@@ -16,6 +16,7 @@ export default function CalendarPage() {
     new Date(2025, 3, 5),
     new Date(2025, 3, 12),
     new Date(2025, 3, 27),
+    new Date(2025, 4, 28),
   ]);
 
   // 定义 modifier：如果日期在 eventDates 里，就命中 .hasEvent
