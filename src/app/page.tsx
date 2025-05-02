@@ -3,6 +3,7 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import "react-day-picker/dist/style.css";
+import ThemeToggle from "@/components/ThemeToggle";
 
 // SSR 环境下按需加载，避免样式闪烁
 const DayPicker = dynamic(
@@ -31,6 +32,13 @@ export default function CalendarPage() {
 
   return (
     <div className="p-4 max-w-md mx-auto">
+      <main
+        className="flex min-h-screen flex-col items-center justify-center
+                     bg-[rgb(var(--background))] text-[rgb(var(--foreground))]"
+      >
+        <h1 className="text-3xl font-bold mb-4">Hello, Next.js!</h1>
+        <ThemeToggle />
+      </main>
       <DayPicker
         mode="single"
         selected={new Date()}
