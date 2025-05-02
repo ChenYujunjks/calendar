@@ -1,54 +1,78 @@
-"use client";
-// pages/calendar.tsx
-import { useState } from "react";
-import dynamic from "next/dynamic";
+// src/app/page.tsx
+import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 
-// SSR 环境下按需加载，避免样式闪烁
-const DayPicker = dynamic(
-  () => import("react-day-picker").then((mod) => mod.DayPicker),
-  { ssr: false }
-);
-
-export default function CalendarPage() {
-  // 假设这些日期有 “session”
-  const [eventDates] = useState<Date[]>([
-    new Date(2025, 3, 5),
-    new Date(2025, 3, 12),
-    new Date(2025, 3, 27),
-    new Date(2025, 4, 28),
-  ]);
-
-  // 定义 modifier：如果日期在 eventDates 里，就命中 .hasEvent
-  const modifiers = {
-    hasEvent: (day: Date) =>
-      eventDates.some(
-        (d) =>
-          d.getFullYear() === day.getFullYear() &&
-          d.getMonth() === day.getMonth() &&
-          d.getDate() === day.getDate()
-      ),
-  };
-
+export default function HomePage() {
   return (
-    <div className="p-4 max-w-md mx-auto">
-      <main
-        className="flex flex-col items-center gap-6
-                 bg-[rgb(var(--background))] text-[rgb(var(--foreground))]"
-      >
-        <h1 className="text-3xl font-bold mt-8">Hello, Next.js!</h1>
-        <ThemeToggle />
-        <DayPicker
-          mode="single"
-          selected={new Date()}
-          modifiers={modifiers}
-          modifiersClassNames={{
-            hasEvent:
-              "relative after:absolute after:bottom-1 after:left-1/2 after:-translate-x-1/2 " +
-              "after:w-2 after:h-2 after:rounded-full after:bg-blue-500",
-          }}
-        />
-      </main>
-    </div>
+    <main
+      className="mx-auto flex min-h-screen max-w-2xl flex-col gap-10
+                 px-6 py-12 bg-[rgb(var(--background))] text-[rgb(var(--foreground))]"
+    >
+      {/* Header */}
+      <header className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold">YiTan Li</h1>
+
+        <div className="flex items-center gap-4">
+          {/* ① 日夜切换 */}
+          <ThemeToggle />
+
+          {/* ② 跳转 Calendar，hover = mint green */}
+          <Link
+            href="/calendar"
+            className="rounded-lg border px-4 py-2 text-sm transition
+                       hover:bg-[#a7f3d0] hover:text-zinc-900
+                       dark:hover:bg-[#34d399]/30"
+          >
+            Open Calendar
+          </Link>
+        </div>
+      </header>
+
+      {/* About */}
+      <section className="space-y-4 leading-relaxed">
+        <h2 className="text-xl font-semibold">About Me</h2>
+        <p>
+          I&apos;m a senior CS student at <strong>NYU Shanghai</strong>{" "}
+          (Class of 2025), passionate about decentralized systems,
+          cryptography&nbsp;⚙️, and creative coding. Recent projects include a
+          blockchain‑based messaging app and an interactive WebGL tool.
+        </p>
+        <p>
+          Skills: Python · Go · TypeScript · React/Next.js · Solidity · MySQL
+        </p>
+      </section>
+
+      {/* Contact */}
+      <section className="space-y-2">
+        <h2 className="text-xl font-semibold">Contact Me</h2>
+        <ul className="list-inside list-disc text-sm">
+          <li>
+            Email:&nbsp;
+            <a
+              href="mailto:yitan.li@example.com"
+              className="underline hover:text-blue-600"
+            >
+              yitan.li@example.com
+            </a>
+          </li>
+          <li>
+            GitHub:&nbsp;
+            <a
+              href="https://github.com/yitan-li"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-blue-600"
+            >
+              github.com/yitan-li
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      {/* Footer */}
+      <footer className="mt-auto border-t pt-6 text-center text-xs text-zinc-500">
+        © {new Date().getFullYear()} YiTan Li. All rights reserved.
+      </footer>
+    </main>
   );
 }
