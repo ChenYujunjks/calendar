@@ -14,10 +14,10 @@ const DayPicker = dynamic(
 export default function SessionCalendar() {
   // demo data：session list per day
   const [events, setEvents] = useState<Record<string, string[]>>({
-    "2025-04-05": ["Buy‑in 200 / Cash‑out 350"],
+    "2025-04-05": ["Buy-in 200 / Cash-out 350"],
     "2025-04-12": ["Session with Mike"],
     "2025-04-27": ["Evening game"],
-    "2025-05-28": ["WSOP satellite"],
+    "2025-05-27": ["WSOP satellite"],
   });
 
   const [activeDate, setActiveDate] = useState<Date | null>(null);
@@ -43,10 +43,12 @@ export default function SessionCalendar() {
         onDayClick={(d) => setActiveDate(d)}
         modifiers={modifiers}
         modifiersClassNames={{
-          hasEvent:
-            "relative after:absolute after:bottom-1 after:left-1/2 " +
-            "after:-translate-x-1/2 after:w-2 after:h-2 after:rounded-full " +
-            "after:bg-blue-500",
+          hasEvent: "hasEvent",
+        }}
+        classNames={{
+          table: "w-full border-separate border-spacing-2", // 控制间距
+          cell: "text-center align-top h-14 w-14", // 每格高度宽度
+          day: "rounded-full hover:bg-gray-200 transition", // 日期按钮
         }}
       />
 

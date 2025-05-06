@@ -32,13 +32,13 @@ export default function HomePage() {
       <section className="space-y-4 leading-relaxed">
         <h2 className="text-xl font-semibold">About Me</h2>
         <p>
-          I&apos;m a senior CS student at <strong>NYU Shanghai</strong>{" "}
-          (Class of 2025), passionate about decentralized systems,
-          cryptography&nbsp;⚙️. Recent projects include a
-          blockchain-based messaging app and an interactive WebGL tool.
+          I&apos;m a senior CS student at <strong>NYU Shanghai</strong> (Class
+          of 2025), passionate about decentralized systems,
+          cryptocurrency&nbsp;⚙️. Recent projects include a blockchain-based
+          messaging app and an interactive WebGL tool.
         </p>
         <p>
-          Skills:Go · TypeScript · React/Next.js · MySQL · Python · Solidity 
+          Skills:Go · TypeScript · React/Next.js · MySQL · Python · Solidity
         </p>
       </section>
 
