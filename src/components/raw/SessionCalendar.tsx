@@ -43,10 +43,12 @@ export default function SessionCalendar() {
         onDayClick={(d) => setActiveDate(d)}
         modifiers={modifiers}
         modifiersClassNames={{
-          hasEvent:
-            "relative after:absolute after:bottom-1 after:left-1/2 " +
-            "after:-translate-x-1/2 after:w-2 after:h-2 after:rounded-full " +
-            "after:bg-blue-500",
+          hasEvent: "hasEvent",
+        }}
+        classNames={{
+          table: "w-full border-separate border-spacing-2", // 控制间距
+          cell: "text-center align-top h-14 w-14", // 每格高度宽度
+          day: "rounded-full hover:bg-gray-200 transition", // 日期按钮
         }}
       />
 
