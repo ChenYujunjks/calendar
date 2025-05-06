@@ -61,7 +61,7 @@ export default function CustomCalendar() {
         open={!!activeDate}
         onOpenChange={(open) => !open && setActiveDate(null)}
       >
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md bg-white text-black dark:bg-zinc-900 dark:text-white">
           <DialogHeader>
             <DialogTitle>
               {activeDate?.toLocaleDateString()} Sessions
