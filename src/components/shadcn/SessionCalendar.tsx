@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useCallback } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -8,11 +7,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { EventModal } from "../raw/EventModal";
 
 export default function SessionCalendar() {
   const [events, setEvents] = useState<Record<string, string[]>>({
-    "2025-04-05": ["Buy‑in 200 / Cash‑out 350"],
+    "2025-04-05": ["Buy-in 200 / Cash-out 350"],
     "2025-04-12": ["Session with Mike"],
     "2025-04-27": ["Evening game"],
     "2025-05-28": ["WSOP satellite"],
@@ -29,6 +27,13 @@ export default function SessionCalendar() {
     },
     [activeDate]
   );
+  const [inputValue, setInputValue] = useState("");
+
+  const handleSubmit = () => {
+    if (!inputValue.trim()) return;
+    addEvent(inputValue.trim());
+    setInputValue(""); // 清空输入框
+  };
 
   return (
     <>
@@ -52,14 +57,39 @@ export default function SessionCalendar() {
             </DialogTitle>
           </DialogHeader>
 
-          {activeDate && (
-            <EventModal
-              date={activeDate}
-              events={events[key(activeDate)] ?? []}
-              onAddEvent={addEvent}
-              onClose={() => setOpen(false)}
+          {/* 显示事件列表 */}
+          <ul className="space-y-2 max-h-40 overflow-y-auto mb-4">
+            {activeDate && events[key(activeDate)]?.length ? (
+              events[key(activeDate)].map((ev, i) => (
+                <li key={i} className="rounded bg-muted p-2 text-sm">
+                  {ev}
+                </li>
+              ))
+            ) : (
+              <li className="text-sm text-muted-foreground">
+                No sessions yet.
+              </li>
+            )}
+          </ul>
+
+          {/* 输入 + 添加按钮 */}
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+              placeholder="Add a note…"
+              className="flex-1 rounded border px-2 py-1 text-sm outline-none"
             />
-          )}
+            <button
+              onClick={handleSubmit}
+              className="bg-blue-600 text-white px-3 py-1 text-sm rounded disabled:opacity-40"
+              disabled={!inputValue.trim()}
+            >
+              Add
+            </button>
+          </div>
         </DialogContent>
       </Dialog>
     </>

@@ -14,10 +14,10 @@ const DayPicker = dynamic(
 export default function SessionCalendar() {
   // demo data：session list per day
   const [events, setEvents] = useState<Record<string, string[]>>({
-    "2025-04-05": ["Buy‑in 200 / Cash‑out 350"],
+    "2025-04-05": ["Buy-in 200 / Cash-out 350"],
     "2025-04-12": ["Session with Mike"],
     "2025-04-27": ["Evening game"],
-    "2025-05-28": ["WSOP satellite"],
+    "2025-05-27": ["WSOP satellite"],
   });
 
   const [activeDate, setActiveDate] = useState<Date | null>(null);
