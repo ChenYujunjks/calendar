@@ -1,7 +1,7 @@
 "use client";
 
 import ThemeToggle from "@/components/ThemeToggle";
-import SessionCalendar from "@/components/raw/SessionCalendar";
+import SessionCalendar from "@/components/SessionCalendar";
 
 export default function CalendarPage() {
   return (

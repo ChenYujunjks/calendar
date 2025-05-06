@@ -30,9 +30,9 @@ export default function HomePage() {
 
       {/* About */}
       <section className="space-y-4 leading-relaxed">
-        <h2 className="text-xl font-semibold">About Me</h2>
+        <h2 className="text-xl font-semibold">About Me</h2>
         <p>
-          I&apos;m a senior CS student at <strong>NYU Shanghai</strong> (Class
+          I&apos;m a senior CS student at <strong>NYU Shanghai</strong> (Class
           of 2025), passionate about decentralized systems,
           cryptocurrency&nbsp;⚙️. Recent projects include a blockchain-based
           messaging app and an interactive WebGL tool.
@@ -44,7 +44,7 @@ export default function HomePage() {
 
       {/* Contact */}
       <section className="space-y-2">
-        <h2 className="text-xl font-semibold">Contact Me</h2>
+        <h2 className="text-xl font-semibold">Contact Me</h2>
         <ul className="list-inside list-disc text-sm">
           <li>
             Email:&nbsp;

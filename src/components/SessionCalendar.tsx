@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import dynamic from "next/dynamic";
-import { EventModal } from "../raw/EventModal";
+import { EventModal } from "./EventModal";
 
 // Lazy‑load DayPicker in client
 const DayPicker = dynamic(
