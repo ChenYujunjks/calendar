@@ -10,7 +10,6 @@ const DayPicker = dynamic(
   { ssr: false }
 );
 
-/** Poker‑session calendar with modal */
 export default function SessionCalendar() {
   // demo data：session list per day
   const [events, setEvents] = useState<Record<string, string[]>>({

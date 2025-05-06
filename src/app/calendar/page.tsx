@@ -1,7 +1,7 @@
 "use client";
 
 import ThemeToggle from "@/components/ThemeToggle";
-import SessionCalendar from "@/components/SessionCalendar";
+import CustomCalendar from "@/components/CustomCalendar";
 
 export default function CalendarPage() {
   return (
@@ -11,7 +11,7 @@ export default function CalendarPage() {
     >
       <h1 className="text-2xl font-bold">Poker Session Tracker</h1>
       <ThemeToggle />
-      <SessionCalendar />
+      <CustomCalendar />
     </main>
   );
 }
