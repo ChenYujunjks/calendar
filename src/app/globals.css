@@ -40,7 +40,7 @@
 }
 
 html[data-theme="dark"] {
-  --background: 24, 24, 27; /* 逗号分隔，确保 `rgb(var(--background))` 可用 */
+  --background: 24, 24, 27; 
   --foreground: 245, 245, 245;
 }
 
