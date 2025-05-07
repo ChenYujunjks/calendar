@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modular Calendar Component for Poker Tracker
 
-## Getting Started
+This is a modular and reusable calendar UI component built with [Next.js](https://nextjs.org), designed for seamless integration into my [Poker Tracker](https://github.com/your-username/poker-tracker) project.
 
-First, run the development server:
+The calendar component supports:
+
+- Visual display of events by date
+- Dialog pop-ups to view and add session notes
+- Easy extensibility for session details (e.g., buy-in, cash-out)
+- Theme-aware UI (light/dark mode) with [shadcn/ui](https://ui.shadcn.com)
+
+## 🛠️ Getting Started
+
+To run the development server locally:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project follows a modular architecture:
 
-## Learn More
+- `components/CustomCalendar.tsx`: Main calendar display using `react-day-picker`
+- `components/SessionDialog.tsx`: Handles event dialog with input and session list
+- `hooks/useCalendarEvents.ts`: Local event state management
+- `app/page.tsx`: Demo integration page
 
-To learn more about Next.js, take a look at the following resources:
+## 🔌 Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can import the `<CustomCalendar />` component and integrate it into any Next.js or React-based app. It’s especially suitable for session/event tracking tools like my poker tracker system.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```tsx
+import CustomCalendar from "@/components/CustomCalendar";
 
-## Deploy on Vercel
+export default function MyPage() {
+  return <CustomCalendar />;
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Dependencies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js 14 App Router](https://nextjs.org/docs)
+- [react-day-picker](https://react-day-picker.js.org/)
+- [shadcn/ui](https://ui.shadcn.com) for dialog and styling
+- Tailwind CSS
+
+## 🧪 Planned Features
+
+- Fetch/store sessions via API
+- Rich session metadata (location, player count, profit)
+- Calendar range navigation (month/year switch)
+- Export/import support
