@@ -1,5 +1,3 @@
-"use client";
-
 import ThemeToggle from "@/components/ThemeToggle";
 import CustomCalendar from "@/components/CustomCalendar";
 
