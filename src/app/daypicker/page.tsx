@@ -1,5 +1,5 @@
 import ThemeToggle from "@/components/ThemeToggle";
-import CustomCalendar from "@/components/CustomCalendar";
+import CustomDayPicker from "@/components/CustomDayPicker";
 
 export default function CalendarPage() {
   return (
@@ -9,7 +9,7 @@ export default function CalendarPage() {
     >
       <h1 className="text-2xl font-bold">Poker Session Tracker</h1>
       <ThemeToggle />
-      <CustomCalendar />
+      <CustomDayPicker />
     </main>
   );
 }
