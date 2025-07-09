@@ -5,19 +5,21 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { Card } from "@/components/ui/card";
+import { JSX } from "react";
 
 export function CalendarView({ courses }: { courses: any[] }) {
   return (
     <Card
       className="p-4
-    [&_.fc-daygrid-day-frame]:py-7
-    [&_.fc-daygrid-event]:text-base
-    [&_.fc-daygrid-day-number]:absolute
-    [&_.fc-daygrid-day-number]:top-0
-    [&_.fc-daygrid-day-number]:right-0
-    [&_.fc-daygrid-day-number]:text-xs
-    [&_.fc-daygrid-day-number]:text-gray-500
-  "
+      [&_.fc-daygrid-day-frame]:bg-red-50
+    [&_.fc-daygrid-day-frame]:border
+    [&_.fc-daygrid-day-frame]:border-gray-200
+    [&_.fc-daygrid-day-frame]:rounded-lg
+    [&_.fc-daygrid-day-frame]:shadow-sm
+    [&_.fc-daygrid-day-frame]:hover:bg-red-100
+    [&_.fc-daygrid-day-frame]:hover:border-red-300
+    [&_.fc-daygrid-day-frame]:transition-colors
+      "
     >
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
@@ -33,6 +35,21 @@ export function CalendarView({ courses }: { courses: any[] }) {
           end: c.end,
         }))}
         height="auto"
+        // ✅ 自定义每个“日期单元格”的内容
+        dayCellContent={(arg) => {
+          return (
+            <div className="h-full rounded-xl border shadow-sm p-2 text-right text-xs text-gray-500">
+              {arg.dayNumberText}
+            </div>
+          );
+        }}
+        eventContent={(arg): JSX.Element => {
+          return (
+            <div className="bg-blue-100 text-blue-800 text-sm rounded px-1 py-0.5 mt-0.5 truncate">
+              {arg.event.title}
+            </div>
+          );
+        }}
       />
     </Card>
   );
