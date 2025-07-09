@@ -10,6 +10,7 @@ const mockCourses = [
   { title: "数学小班", teacher: "王老师", type: "数学", date: "2025-07-10", time: "10:00" },
   { title: "英语课", teacher: "李老师", type: "英语", date: "2025-07-11", time: "14:00" },
   { title: "科学实验", teacher: "周老师", type: "科学", date: "2025-07-11", time: "16:00" },
+   { title: "雅思", teacher: "周老师", type: "科学", date: "2025-07-11", time: "16:00" },
 ];
 
 export default function TabPage() {
