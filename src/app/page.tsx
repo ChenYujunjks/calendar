@@ -19,6 +19,14 @@ export default function HomePage() {
                        hover:bg-[#a7f3d0] hover:text-zinc-900
                        dark:hover:bg-[#34d399]/30"
           >
+            Open View
+          </Link>
+          <Link
+            href="/calendar"
+            className="rounded-lg border px-4 py-2 text-sm transition
+                       hover:bg-[#a7f3d0] hover:text-zinc-900
+                       dark:hover:bg-[#34d399]/30"
+          >
             Open Calendar
           </Link>
         </div>
