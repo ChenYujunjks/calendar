@@ -67,7 +67,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="mt-auto border-t pt-6 text-center text-xs text-zinc-500">
-        © {new Date().getFullYear()} Bruce Chen. All rights reserved.
+        © {new Date().getFullYear()} Bruce Chen. All rights reserved.
       </footer>
     </main>
   );
