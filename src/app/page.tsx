@@ -22,7 +22,7 @@ export default function HomePage() {
             Open View
           </Link>
           <Link
-            href="/calendar"
+            href="/calendarview"
             className="rounded-lg border px-4 py-2 text-sm transition
                        hover:bg-[#a7f3d0] hover:text-zinc-900
                        dark:hover:bg-[#34d399]/30"
