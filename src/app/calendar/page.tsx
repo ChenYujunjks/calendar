@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarView } from "@/components/calendar/CalendarView"; // ✅ 更符合语义
+import { CalendarView } from "@/components/CalendarView/CalendarView"; // ✅ 更符合语义
 import { useMockSessions } from "@/hooks/useMockSessions";
 
 export default function CalendarPage() {

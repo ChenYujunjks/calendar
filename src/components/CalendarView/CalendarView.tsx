@@ -43,7 +43,7 @@ export function CalendarView({ sessions }: { sessions: Session[] }) {
           </div>
         )}
         eventContent={(arg): JSX.Element => (
-          <div className="bg-blue-100 text-blue-800 text-sm rounded px-1 py-0.5 mt-0.5 truncate">
+          <div className="w-full block  bg-blue-100 text-blue-800 text-sm rounded px-1 py-0.5 mt-0.5 truncate">
             {arg.event.title}
           </div>
         )}
