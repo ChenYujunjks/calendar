@@ -20,7 +20,13 @@ export function CalendarView({ sessions }: { sessions: Session[] }) {
       [&_.fc-daygrid-day-frame]:hover:bg-red-100
       [&_.fc-daygrid-day-frame]:hover:border-red-300
       [&_.fc-daygrid-day-frame]:transition-colors
-      "
+      [&_.fc-daygrid-event-harness]:m-0
+      [&_.fc-event]:m-0
+      [&_.fc-daygrid-day-number]:text-xs
+      [&_.fc-daygrid-day-number]:pt-0
+      [&_.fc-daygrid-day-number]:leading-none
+      [&_.fc-daygrid-day-frame]:pt-3
+    "
     >
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
@@ -38,15 +44,32 @@ export function CalendarView({ sessions }: { sessions: Session[] }) {
         }))}
         height="auto"
         dayCellContent={(arg) => (
-          <div className="h-full rounded-xl border shadow-sm p-2 text-right text-xs text-gray-500">
+          <div
+            className="text-[10px] text-right text-gray-400 pr-1 pt-0 leading-none"
+            suppressHydrationWarning
+          >
             {arg.dayNumberText}
           </div>
         )}
-        eventContent={(arg): JSX.Element => (
-          <div className="w-full block  bg-blue-100 text-blue-800 text-sm rounded px-1 py-0.5 mt-0.5 truncate">
-            {arg.event.title}
-          </div>
-        )}
+        eventContent={(arg): JSX.Element => {
+          const startTime = arg.event.start?.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false,
+          });
+
+          const endTime = arg.event.end?.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false,
+          });
+
+          return (
+            <div className="w-full bg-blue-100 text-blue-900 text-[12px] px-1 py-[2px] font-medium rounded-sm">
+              {startTime} - {endTime} {arg.event.title}
+            </div>
+          );
+        }}
       />
     </Card>
   );
