@@ -1,5 +1,5 @@
 "use client";
-
+import { DayCellContentArg, EventContentArg } from "@fullcalendar/core";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -43,7 +43,7 @@ export function CalendarView({ sessions }: { sessions: Session[] }) {
           end: `${s.date}T${s.end_time}`,
         }))}
         height="auto"
-        dayCellContent={(arg) => (
+        dayCellContent={(arg: DayCellContentArg) => (
           <div
             className="text-[10px] text-right text-gray-400 pr-1 pt-0 leading-none"
             suppressHydrationWarning
@@ -51,7 +51,7 @@ export function CalendarView({ sessions }: { sessions: Session[] }) {
             {arg.dayNumberText}
           </div>
         )}
-        eventContent={(arg): JSX.Element => {
+        eventContent={(arg: EventContentArg): JSX.Element => {
           const startTime = arg.event.start?.toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",
