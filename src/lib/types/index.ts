@@ -12,3 +12,16 @@ export type Session = {
   notes?: string | null;
   created_at: string;
 };
+
+// lib/types/index.ts
+// lib/types/index.ts
+
+export type MockCourse = {
+  title: string;
+  teacher: string;
+  type: string;
+  date: string; // eg. "2025-07-10"
+  time: string; // eg. "10:00"
+  start?: string; // Optional: FullCalendar 支持的 ISO 格式（"2025-07-10T10:00"）
+  end?: string; // Optional
+};

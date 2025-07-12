@@ -7,10 +7,42 @@ import { TimelineView } from "@/components/view/timelineview";
 import { CardView } from "@/components/view/cardview";
 
 const mockCourses = [
-  { title: "数学小班", teacher: "王老师", type: "数学", date: "2025-07-10", time: "10:00" },
-  { title: "英语课", teacher: "李老师", type: "英语", date: "2025-07-11", time: "14:00" },
-  { title: "科学实验", teacher: "周老师", type: "科学", date: "2025-07-11", time: "16:00" },
-   { title: "雅思", teacher: "周老师", type: "科学", date: "2025-07-11", time: "16:00" },
+  {
+    title: "数学小班",
+    teacher: "王老师",
+    type: "数学",
+    date: "2025-07-10",
+    time: "10:00",
+    start: "2025-07-10T10:00",
+    end: "2025-07-10T11:00",
+  },
+  {
+    title: "英语课",
+    teacher: "李老师",
+    type: "英语",
+    date: "2025-07-11",
+    time: "14:00",
+    start: "2025-07-11T14:00",
+    end: "2025-07-11T15:00",
+  },
+  {
+    title: "科学实验",
+    teacher: "周老师",
+    type: "科学",
+    date: "2025-07-11",
+    time: "16:00",
+    start: "2025-07-11T16:00",
+    end: "2025-07-11T17:00",
+  },
+  {
+    title: "雅思",
+    teacher: "周老师",
+    type: "科学",
+    date: "2025-07-11",
+    time: "16:00",
+    start: "2025-07-11T16:00",
+    end: "2025-07-11T17:00",
+  },
 ];
 
 export default function TabPage() {

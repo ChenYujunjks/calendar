@@ -7,8 +7,9 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
+import { MockCourse } from "@/lib/types";
 
-export function TableView({ courses }: { courses: any[] }) {
+export function TableView({ courses }: { courses: MockCourse[] }) {
   return (
     <Card className="p-4">
       <Table>

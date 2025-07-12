@@ -7,6 +7,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { Card } from "@/components/ui/card";
 import { JSX } from "react";
 import { Session } from "@/lib/types";
+import { formatTime } from "@/lib/utils/format";
 
 export function CalendarView({ sessions }: { sessions: Session[] }) {
   return (
@@ -52,17 +53,8 @@ export function CalendarView({ sessions }: { sessions: Session[] }) {
           </div>
         )}
         eventContent={(arg: EventContentArg): JSX.Element => {
-          const startTime = arg.event.start?.toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: false,
-          });
-
-          const endTime = arg.event.end?.toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: false,
-          });
+          const startTime = formatTime(arg.event.start?.toISOString());
+          const endTime = formatTime(arg.event.end?.toISOString());
 
           return (
             <div className="w-full bg-blue-100 text-blue-900 text-[12px] px-1 py-[2px] font-medium rounded-sm">

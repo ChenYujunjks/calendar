@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
+import { MockCourse } from "@/lib/types";
 
-export function TimelineView({ courses }: { courses: any[] }) {
+export function TimelineView({ courses }: { courses: MockCourse[] }) {
   return (
     <Card className="p-6">
       <div className="border-l-2 border-gray-300 pl-4 space-y-6">

@@ -6,8 +6,8 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { Card } from "@/components/ui/card";
 import { JSX } from "react";
-
-export function CalendarView({ courses }: { courses: any[] }) {
+import { MockCourse } from "@/lib/types"; // 如果你放在 types 文件里
+export function CalendarView({ courses }: { courses: MockCourse[] }) {
   return (
     <Card
       className="p-4
@@ -45,7 +45,7 @@ export function CalendarView({ courses }: { courses: any[] }) {
         }}
         eventContent={(arg): JSX.Element => {
           return (
-            <div className="bg-blue-100 text-blue-800 text-sm rounded px-1 py-0.5 mt-0.5 truncate">
+            <div className="w-full bg-blue-100 text-blue-800 text-sm rounded px-1 py-0.5 mt-0.5 truncate">
               {arg.event.title}
             </div>
           );
