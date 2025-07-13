@@ -13,9 +13,6 @@ export type Session = {
   created_at: string;
 };
 
-// lib/types/index.ts
-// lib/types/index.ts
-
 export type MockCourse = {
   title: string;
   teacher: string;

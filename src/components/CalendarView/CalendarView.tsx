@@ -6,7 +6,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { Card } from "@/components/ui/card";
 import { JSX } from "react";
-import { Session } from "@/lib/types";
+import type { Session } from "@/lib/types";
 import { formatTime } from "@/lib/utils/format";
 
 export function CalendarView({ sessions }: { sessions: Session[] }) {
