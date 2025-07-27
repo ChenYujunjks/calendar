@@ -5,16 +5,9 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import {
-  LayoutDashboard,
-  CalendarClock,
-  Users2,
-  BookOpen,
-  LineChart,
-  Menu,
-} from "lucide-react";
+import { LayoutDashboard, CalendarClock, LineChart, Menu } from "lucide-react";
 const navItems = [
-  { href: "/calendar", label: "去日历", icon: Users2 },
+  { href: "/calendar", label: "去日历", icon: CalendarClock },
   { href: "/daypicker", label: "daypicker", icon: LayoutDashboard },
   { href: "/tabs", label: "不同视图", icon: Menu },
   { href: "/contact", label: "联系我们", icon: LineChart },
