@@ -31,12 +31,13 @@ export default function NavLayout({ children }: { children: React.ReactNode }) {
 
         <NavigationMenu>
           <NavigationMenuList>
-            {navItems.map(({ href, label }) => (
+            {navItems.map(({ href, label, icon: Icon }) => (
               <NavigationMenuItem key={href}>
                 <Link
                   href={href}
-                  className="text-sm font-medium px-4 py-2 rounded-md hover:bg-accent hover:text-accent-foreground transition"
+                  className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-md hover:bg-accent hover:text-accent-foreground transition"
                 >
+                  <Icon className="w-4 h-4 shrink-0" />
                   {label}
                 </Link>
               </NavigationMenuItem>
