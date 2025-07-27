@@ -1,4 +1,3 @@
-// ✅ 顶部导航栏 Layout（适用于前台、小型项目、展示页）
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
@@ -6,12 +5,19 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-
+import {
+  LayoutDashboard,
+  CalendarClock,
+  Users2,
+  BookOpen,
+  LineChart,
+  Menu,
+} from "lucide-react";
 const navItems = [
-  { href: "/about", label: "关于我们" },
-  { href: "/features", label: "功能特色" },
-  { href: "/pricing", label: "价格方案" },
-  { href: "/contact", label: "联系我们" },
+  { href: "/calendar", label: "去日历", icon: Users2 },
+  { href: "/daypicker", label: "daypicker", icon: LayoutDashboard },
+  { href: "/tabs", label: "不同视图", icon: Menu },
+  { href: "/contact", label: "联系我们", icon: LineChart },
 ];
 
 export default function NavLayout({ children }: { children: React.ReactNode }) {
