@@ -4,7 +4,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 export default function HomePage() {
   return (
-    <main className="mx-auto flex min-h-screen max-w-2xl flex-col px-6 py-12 bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
+    <main className="mx-auto flex min-h-screen max-w-4xl flex-col px-6 py-12 bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
       {/* Header */}
       <header className="flex items-center justify-between">
         <h1 className="text-3xl font-bold">Bruce Chen</h1>
@@ -27,7 +27,16 @@ export default function HomePage() {
                        hover:bg-[#a7f3d0] hover:text-zinc-900
                        dark:hover:bg-[#34d399]/30"
           >
-            Open Calendar
+            Calendar
+          </Link>
+
+          <Link
+            href="/daypicker"
+            className="rounded-lg border px-4 py-2 text-sm transition
+                       hover:bg-[#a7f3d0] hover:text-zinc-900
+                       dark:hover:bg-[#34d399]/30"
+          >
+            daypicker
           </Link>
         </div>
       </header>
