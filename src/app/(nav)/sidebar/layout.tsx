@@ -13,10 +13,10 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 const navItems = [
-  { href: "/students", label: "学生管理", icon: Users2 },
-  { href: "/teachers", label: "教师管理", icon: BookOpen },
-  { href: "/courses", label: "课程管理", icon: LayoutDashboard },
-  { href: "/sessions", label: "课时记录", icon: CalendarClock },
+  { href: "/forms", label: "forms", icon: Users2 },
+  { href: "/tabs", label: "tabs", icon: BookOpen },
+  { href: "/daypicker", label: "daypicker", icon: LayoutDashboard },
+  { href: "/calendar", label: "calendar", icon: CalendarClock },
   { href: "/insights", label: "数据分析", icon: LineChart },
 ];
 
@@ -33,7 +33,7 @@ export default function DashboardLayout({
       <aside
         className={cn(
           "hidden md:flex flex-col border-r bg-card px-4 py-6 transition-all duration-300",
-          collapsed ? "w-16" : "w-64"
+          collapsed ? "w-16" : "w-50"
         )}
       >
         <div className="flex items-center justify-between mb-6">
