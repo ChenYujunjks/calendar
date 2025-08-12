@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { userEmailSchema } from "@/lib/schemas/user";
 
-export function MyForm() {
+export default function EmailFormRHF() {
   const {
     register,
     handleSubmit,

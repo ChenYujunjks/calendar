@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import * as z from "zod"; // ← 注意引入
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -15,7 +16,7 @@ export default function MyFormVanilla() {
     const parsed = userEmailSchema.safeParse({ email });
 
     if (!parsed.success) {
-      const { fieldErrors, formErrors } = parsed.error.flatten();
+      const { fieldErrors, formErrors } = z.flattenError(parsed.error); // ← 这里
       setErrors({
         email: fieldErrors.email?.[0],
         _form: formErrors[0],
