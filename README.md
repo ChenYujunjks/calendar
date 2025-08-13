@@ -48,9 +48,36 @@ export default function MyPage() {
 - [shadcn/ui](https://ui.shadcn.com) for dialog and styling
 - Tailwind CSS
 
-## 🧪 Planned Features
+## 🧪 Other Features
 
-- Fetch/store sessions via API
-- Rich session metadata (location, player count, profit)
-- Calendar range navigation (month/year switch)
-- Export/import support
+# RHF + Zod 表单学习项目
+
+## 📦 使用技术栈
+
+- React Hook Form
+- Zod
+- TypeScript
+- Tailwind UI（shadcn/ui）
+
+## 🧠 Zod 知识点总结
+
+### 1. 基本字段校验
+
+...
+
+### 2. `.coerce` 类型转换
+
+...
+
+### 3. 拆分 FormData 与 Resolved 类型
+
+...
+
+### 4. 命名规范建议
+
+...
+
+## 💡 与 RHF 搭配使用
+
+使用 `zodResolver` 将 Zod 集成进 RHF 表单处理。
+...
