@@ -9,17 +9,6 @@ The calendar component supports:
 - Easy extensibility for session details (e.g., buy-in, cash-out)
 - Theme-aware UI (light/dark mode) with [shadcn/ui](https://ui.shadcn.com)
 
-## 🛠️ Getting Started
-
-To run the development server locally:
-
-```bash
-pnpm install
-pnpm run dev
-```
-
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
-
 ## 📁 Project Structure
 
 This project follows a modular architecture:

@@ -5,12 +5,13 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { LayoutDashboard, CalendarClock, LineChart, Menu } from "lucide-react";
+import { Clock, CalendarClock, Phone, Menu, SquareLibrary } from "lucide-react";
 const navItems = [
   { href: "/calendar", label: "去日历", icon: CalendarClock },
-  { href: "/daypicker", label: "daypicker", icon: LayoutDashboard },
+  { href: "/daypicker", label: "daypicker", icon: Clock },
   { href: "/tabs", label: "不同视图", icon: Menu },
-  { href: "/contact", label: "联系我们", icon: LineChart },
+  { href: "/forms", label: "forms", icon: SquareLibrary },
+  { href: "/contact", label: "联系我们", icon: Phone },
 ];
 
 export default function NavLayout({ children }: { children: React.ReactNode }) {

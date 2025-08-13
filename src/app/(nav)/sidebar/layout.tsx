@@ -1,23 +1,16 @@
 "use client";
-import {
-  LayoutDashboard,
-  CalendarClock,
-  Users2,
-  BookOpen,
-  LineChart,
-  Menu,
-} from "lucide-react";
+import { Clock, CalendarClock, Users2, Phone, Menu } from "lucide-react";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 const navItems = [
-  { href: "/forms", label: "forms", icon: Users2 },
-  { href: "/tabs", label: "tabs", icon: BookOpen },
-  { href: "/daypicker", label: "daypicker", icon: LayoutDashboard },
+  { href: "/daypicker", label: "daypicker", icon: Clock },
   { href: "/calendar", label: "calendar", icon: CalendarClock },
-  { href: "/insights", label: "数据分析", icon: LineChart },
+  { href: "/tabs", label: "tabs", icon: Menu },
+  { href: "/forms", label: "forms", icon: Users2 },
+  { href: "/contact", label: "联系我们", icon: Phone },
 ];
 
 export default function DashboardLayout({
