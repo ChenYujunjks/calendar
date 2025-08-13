@@ -1,6 +1,6 @@
 // app/api/email/route.ts
 import { NextResponse } from "next/server";
-import { userEmailSchema } from "@/lib/schemas/user"; // ✅ 直接引用
+import { userEmailSchema } from "@/lib/schemas/profile"; // ✅ 直接引用
 export async function POST(req: Request) {
   try {
     const body = await req.json();
