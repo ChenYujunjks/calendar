@@ -7,23 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
-// —— Schema（可放到 /lib/schemas/user 里复用）——
-const userProfileSchema = z
-  .object({
-    fullName: z.string().min(2, "姓名至少 2 个字符"),
-    email: z.string().email("邮箱格式不正确"),
-    age: z.coerce.number().int().min(16, "最小 16 岁").max(120, "最大 120 岁"),
-    password: z.string().min(8, "密码至少 8 位"),
-    confirmPassword: z.string().min(8, "确认密码至少 8 位"),
-  })
-  .refine((d) => d.password === d.confirmPassword, {
-    message: "两次密码不一致",
-    path: ["confirmPassword"],
-  });
+// ✅ 直接使用共享的 schema & 类型
+import {
+  userProfileSchema,
+  type ProfileFormInput,
+} from "@/lib/schemas/profile";
 
-type ProfileData = z.infer<typeof userProfileSchema>;
-
-// 可选：从 tree 里按路径取第一个错误（支持嵌套）
+// 从 tree 里按路径取第一个错误（支持嵌套）
 function pickTreeError(
   tree: ReturnType<typeof z.treeifyError>,
   path: string[]
@@ -38,7 +28,7 @@ function pickTreeError(
 }
 
 export default function ProfileFormVanilla() {
-  const [values, setValues] = useState<ProfileData>({
+  const [values, setValues] = useState<ProfileFormInput>({
     fullName: "",
     email: "",
     age: 18,
@@ -46,11 +36,15 @@ export default function ProfileFormVanilla() {
     confirmPassword: "",
   });
 
-  const [errors, setErrors] = useState<Partial<Record<keyof ProfileData | "_form", string>>>({});
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof ProfileFormInput | "_form", string>>
+  >({});
   const [submitting, setSubmitting] = useState(false);
 
-  const setField = <K extends keyof ProfileData>(k: K, v: ProfileData[K]) =>
-    setValues((prev) => ({ ...prev, [k]: v }));
+  const setField = <K extends keyof ProfileFormInput>(
+    k: K,
+    v: ProfileFormInput[K]
+  ) => setValues((prev) => ({ ...prev, [k]: v }));
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -83,7 +77,13 @@ export default function ProfileFormVanilla() {
         return;
       }
       toast.success("提交成功！");
-      setValues({ fullName: "", email: "", age: 18, password: "", confirmPassword: "" });
+      setValues({
+        fullName: "",
+        email: "",
+        age: 18,
+        password: "",
+        confirmPassword: "",
+      });
     } catch {
       setErrors((prev) => ({ ...prev, _form: "网络错误" }));
     } finally {
@@ -100,7 +100,9 @@ export default function ProfileFormVanilla() {
           value={values.fullName}
           onChange={(e) => setField("fullName", e.target.value)}
         />
-        {errors.fullName && <p className="text-sm text-red-500">{errors.fullName}</p>}
+        {errors.fullName && (
+          <p className="text-sm text-red-500">{errors.fullName}</p>
+        )}
       </div>
 
       <div>
@@ -119,7 +121,8 @@ export default function ProfileFormVanilla() {
           id="age"
           type="number"
           value={values.age}
-          onChange={(e) => setField("age", e.target.value as unknown as number)}
+          // ✅ 手动转 number；避免字符串/NaN 触发验证失败
+          onChange={(e) => setField("age", Number(e.target.value))}
         />
         {errors.age && <p className="text-sm text-red-500">{errors.age}</p>}
       </div>
@@ -132,7 +135,9 @@ export default function ProfileFormVanilla() {
           value={values.password}
           onChange={(e) => setField("password", e.target.value)}
         />
-        {errors.password && <p className="text-sm text-red-500">{errors.password}</p>}
+        {errors.password && (
+          <p className="text-sm text-red-500">{errors.password}</p>
+        )}
       </div>
 
       <div>
