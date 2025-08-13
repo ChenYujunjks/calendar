@@ -1,5 +1,5 @@
-import EmailFormVanilla from "@/components/forms/EmailFormVanilla";
-import EmailFormRHF from "@/components/forms/EmailFormRHF";
+import EmailFormVanilla from "@/components/forms/ProfileFormVanilla";
+import EmailFormRHF from "@/components/forms/ProfileFormRHF";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export default function Page() {
