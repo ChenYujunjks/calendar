@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import "react-day-picker/dist/style.css";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Calendar",
@@ -24,6 +25,14 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <Toaster
+          richColors
+          closeButton
+          position="top-center"
+          duration={2000}
+          // 若你用到了 Dialog/Drawer 之类的高 z-index 组件，把它抬高：
+          style={{ zIndex: 9999 }}
+        />
       </body>
     </html>
   );
